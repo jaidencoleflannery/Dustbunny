@@ -45,3 +45,12 @@ async function post(){
 post();
 
 //left off trying to get other functions to import into index - using mjs so we can use import, but now require doesnt work
+
+
+
+
+//testing modules
+import Entity from './js/entity.mjs';
+
+const currentEntity = new Entity("moth", 100, 50, 3);
+console.log(currentEntity.info());
