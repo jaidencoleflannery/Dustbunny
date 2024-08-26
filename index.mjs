@@ -54,3 +54,5 @@ import Entity from './js/entity.mjs';
 
 const currentEntity = new Entity("moth", 100, 50, 3);
 console.log(currentEntity.info());
+
+//test
