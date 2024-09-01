@@ -9,17 +9,18 @@ app.set('view engine', 'ejs');
 // serve static files from the 'public' directory
 app.use(express.static('public'));
 
-// set a route
-app.get('/', (req, res) => {
-    let name = "Moth";
-    res.render('index', {title: name});
-})
+// import login functionality
+import * as auth from './js/user/login.mjs'
 
-import { router } from './routes/users.mjs';
-app.use('/users', router);
+// set home route
+import { indexRouter } from './routes/indexRoute.mjs';
+app.use('/', indexRouter);
+
+// set login route
+import { loginRouter } from './routes/loginRoute.mjs';
+app.use('/login', loginRouter);
 
 app.listen(PORT);
-
 
 
 
@@ -44,8 +45,6 @@ async function post(){
 
 post();
 
-//left off trying to get other functions to import into index - using mjs so we can use import, but now require doesnt work
-
 
 
 
@@ -53,4 +52,4 @@ post();
 import Entity from './js/entity.mjs';
 
 const currentEntity = new Entity("moth", 100, 50, 3);
-console.log(currentEntity.info());
+console.log(currentEntity.info);

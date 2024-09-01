@@ -6,7 +6,6 @@ export default class Entity{
         this.age = age;
     }
     get info() {
-        console.log(JSON.stringify(this.name + this.hunger + this.love + this.age));
         return JSON.stringify(this.name + this.hunger + this.love + this.age);
-      }
+    }
 }

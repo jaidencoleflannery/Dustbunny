@@ -4,10 +4,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= locals.title || "Dustbunny"%></title>
+    <title>Login</title>
 
     <link rel="stylesheet" href="css/index.css">
-    <script src="./main.js" type="module"></script>
+    <script src="./loginLogic.js" type="module"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
         </div>
 
         <div id="title" class="headerPartition">
-            <a href="/">
+            <a href="">
                 dustbunny*
             </a>
         </div>
@@ -47,8 +47,45 @@
             </div>
         </div>
 
-        <div id="entityContainer" class="partition">
-            <svg fill="#ffffff" width="256px" height="256px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="entity"> <title>shine</title> <path id="entityCursor" d="M22 10v4h4v4h-4v4h-4v4h-4v-4h-4v-4h-4v-4h4v-4h4v-4h4v4h4zM26 26v-4h-4v4h4zM26 6h-4v4h4v-4zM6 6v4h4v-4h-4zM6 26h4v-4h-4v4z"></path> </g></svg>
+        <div id="loginContainer" class="partition">
+
+            <a href="" id="loginTitle">LOGIN</a>
+
+            <div id="login"> 
+
+                <form id="loginForm">
+
+                    <div class="loginParam">
+                        <input type="text" 
+                            id="username" 
+                            name="username" 
+                            placeholder="USERNAME" required>
+                    </div>
+
+                    <div class="loginParam">
+                        <input type="password"
+                            id="password" 
+                            name="password"
+                            placeholder="PASSWORD" required>
+                    </div>
+
+                    <div class="loginParam">
+                        <button type="submit"
+                                onclick="submit()">
+                                SUBMIT
+                        </button>
+                    </div>
+
+                </form>
+            
+            </div>
+
+            <div id="loginFooter"> 
+
+                -
+
+            </div>
+
         </div>
 
         <div id="menuContainer" class="partition">
@@ -78,6 +115,9 @@
 
         </div>
 
+    </div>
+
+    <div class="nulled">
     </div>
 
 </body>

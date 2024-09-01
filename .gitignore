@@ -1,4 +1,5 @@
 # ignore file that contains database connection information
+mongo.mjs
 db/mongo.mjs
 
 # Logs
