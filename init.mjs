@@ -52,4 +52,10 @@ post();
 import Entity from './js/entity.mjs';
 
 const currentEntity = new Entity("moth", 100, 50, 3);
+<<<<<<< HEAD:init.mjs
 console.log(currentEntity.info);
+=======
+console.log(currentEntity.info());
+
+//test
+>>>>>>> 1cef8bd6e4300dfb80d69fdd8acac57e53ad11e5:index.mjs
