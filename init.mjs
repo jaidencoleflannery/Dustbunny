@@ -10,7 +10,9 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // import login functionality
-import * as auth from './js/user/login.mjs'
+import * as login from './js/user/login.mjs'
+// import signup functionality
+import * as signup from './js/user/signup.mjs'
 
 // set home route
 import { indexRouter } from './routes/indexRoute.mjs';
@@ -20,7 +22,15 @@ app.use('/', indexRouter);
 import { loginRouter } from './routes/loginRoute.mjs';
 app.use('/login', loginRouter);
 
+// set login route
+import { signupRouter } from './routes/signupRoute.mjs';
+app.use('/signup', signupRouter);
+
 app.listen(PORT);
+
+
+//API points
+
 
 
 
@@ -32,7 +42,7 @@ mongo.connect();
 
 async function post(){
 
-    const logInstance = log.add("FED", 99, Date());
+    const logInstance = log.add("0", "Mark", "123", "FED", 99, Date());
 
     try {
         log.saveLog(logInstance);
@@ -52,10 +62,6 @@ post();
 import Entity from './js/entity.mjs';
 
 const currentEntity = new Entity("moth", 100, 50, 3);
-<<<<<<< HEAD:init.mjs
 console.log(currentEntity.info);
-=======
-console.log(currentEntity.info());
 
 //test
->>>>>>> 1cef8bd6e4300dfb80d69fdd8acac57e53ad11e5:index.mjs
