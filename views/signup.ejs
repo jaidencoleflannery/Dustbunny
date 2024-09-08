@@ -4,10 +4,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= locals.title || "Dustbunny"%></title>
+    <title>Signup</title>
 
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/userInteraction/main.js" type="module"></script>
+    <script src="./public/js/userInteraction/signup.js" type="module"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
         </div>
 
         <div id="title" class="headerPartition">
-            <a href="/">
+            <a href="">
                 dustbunny*
             </a>
         </div>
@@ -47,8 +47,48 @@
             </div>
         </div>
 
-        <div id="entityContainer" class="partition">
-            <svg fill="#ffffff" width="256px" height="256px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="entity"> <title>shine</title> <path id="entityCursor" d="M22 10v4h4v4h-4v4h-4v4h-4v-4h-4v-4h-4v-4h4v-4h4v-4h4v4h4zM26 26v-4h-4v4h4zM26 6h-4v4h4v-4zM6 6v4h4v-4h-4zM6 26h4v-4h-4v4z"></path> </g></svg>
+        <div id="userContainer" class="partition">
+
+            <a href="" id="userTitle">SIGNUP</a>
+
+            <div id="user"> 
+
+                <form action="" id="userForm">
+
+                    <div class="userParam">
+                        <input type="text" 
+                            class="userField"
+                            id="username" 
+                            name="username" 
+                            placeholder="username" required>
+                    </div>
+
+                    <div class="userParam">
+                        <input type="password"
+                            class="userField"
+                            id="password" 
+                            name="password"
+                            placeholder="password" required>
+                    </div>
+
+                    <div class="userParam">
+                        <button type="submit"
+                                class="userField"
+                                onclick="submit()">
+                                submit
+                        </button>
+                    </div>
+
+                </form>
+            
+            </div>
+
+            <div id="userFooter"> 
+
+                signup
+
+            </div>
+
         </div>
 
         <div id="menuContainer" class="partition">
@@ -78,6 +118,9 @@
 
         </div>
 
+    </div>
+
+    <div class="nulled">
     </div>
 
 </body>

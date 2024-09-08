@@ -200,7 +200,7 @@ svg {
 
         }
 
-#loginContainer {
+#userContainer {
 
     font-size: large;
 
@@ -233,7 +233,7 @@ svg {
 
 }
 
-    #loginTitle {
+    #userTitle {
 
         z-index: 3;
 
@@ -254,7 +254,7 @@ svg {
 
     }
 
-    #login {
+    #user {
 
         z-index: 3;
 
@@ -277,7 +277,7 @@ svg {
 
     }
 
-        #loginForm {
+        #userForm {
 
             display: flex;
             flex-direction: column;
@@ -290,7 +290,7 @@ svg {
             
         }
 
-        .loginParam {
+        .userParam {
 
             display: flex;
 
@@ -302,14 +302,14 @@ svg {
 
         }
 
-        #loginParam:hover {
+        #userParam:hover {
 
             scale: 1.01;
             transition: 4s;
 
         }
 
-            .loginField {
+            .userField {
 
                 display: flex;
 
@@ -342,7 +342,7 @@ svg {
 
             }
 
-            .loginSubmit {
+            .userSubmit {
 
                 display: flex;
 
@@ -373,7 +373,7 @@ svg {
 
             }
 
-            .loginParam > ::placeholder 
+            .userParam > ::placeholder 
                {
 
                 opacity: 1;
@@ -385,7 +385,7 @@ svg {
 
             }
 
-    #loginFooter {
+    #userFooter {
 
         z-index: 3;
 

@@ -7,7 +7,7 @@
     <title>Login</title>
 
     <link rel="stylesheet" href="css/index.css">
-    <script src="./loginLogic.js" type="module"></script>
+    <script src="./public/js/userInteraction/login.js" type="module"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,33 +47,33 @@
             </div>
         </div>
 
-        <div id="loginContainer" class="partition">
+        <div id="userContainer" class="partition">
 
-            <a href="" id="loginTitle">LOGIN</a>
+            <a href="" id="userTitle">LOGIN</a>
 
-            <div id="login"> 
+            <div id="user"> 
 
-                <form id="loginForm">
+                <form id="userForm">
 
-                    <div class="loginParam">
+                    <div class="userParam">
                         <input type="text" 
-                            class="loginField"
+                            class="userField"
                             id="username" 
                             name="username" 
                             placeholder="username" required>
                     </div>
 
-                    <div class="loginParam">
+                    <div class="userParam">
                         <input type="password"
-                            class="loginField"
+                            class="userField"
                             id="password" 
                             name="password"
                             placeholder="password" required>
                     </div>
 
-                    <div class="loginParam">
+                    <div class="userParam">
                         <button type="submit"
-                                class="loginField"
+                                class="userField"
                                 onclick="submit()">
                                 submit
                         </button>
@@ -83,7 +83,7 @@
             
             </div>
 
-            <div id="loginFooter"> 
+            <div id="userFooter"> 
 
                 signup
 

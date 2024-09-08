@@ -10,9 +10,9 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // import login functionality
-import * as login from './js/user/login.mjs'
+import * as login from './public/js/userClasses/loginModel.mjs'
 // import signup functionality
-import * as signup from './js/user/signup.mjs'
+import * as signup from './public/js/userClasses/signupModel.mjs'
 
 // set home route
 import { indexRouter } from './routes/indexRoute.mjs';
@@ -36,10 +36,11 @@ app.listen(PORT);
 
 // setup mongodb dependencies (using mongoose)
 import * as mongo from './db/mongo.mjs';
-import * as log from './db/models/log.mjs';
+import * as user from './db/models/userModel.mjs';
 
 mongo.connect();
 
+/* storing as example
 async function post(){
 
     const logInstance = log.add("0", "Mark", "123", "FED", 99, Date());
@@ -55,11 +56,13 @@ async function post(){
 
 post();
 
+*/
+
 
 
 
 //testing modules
-import Entity from './js/entity.mjs';
+import Entity from './public/js/entityClasses/entity.mjs';
 
 const currentEntity = new Entity("moth", 100, 50, 3);
 console.log(currentEntity.info);

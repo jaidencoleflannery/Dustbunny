@@ -9,7 +9,7 @@ export default class Signup{
         return JSON.stringify(this.id + '\n' + this.username + '\n' + this.password + '\n');
       }
 
-    function addUser(){
-
+    addUser(){
+        console.log("add");
     }
 }

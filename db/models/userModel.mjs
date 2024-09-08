@@ -16,6 +16,7 @@ const userSchema = {
     type: String,
     required: false,
   },
+  // appends logs to user ^
   logs: { 
     action: {
       type: {
@@ -28,19 +29,16 @@ const userSchema = {
     date: {
       type: Date,
     },
-  }, // will append logs to user ^
+  },
 }
 
 // Create the model
 const user = mongoose.model('user', userSchema);
 
 // Function to add a new log
-function addUser(id, name, password) {
+function add(name, password) {
   // Create a new log instance
   const currentUser = new user({ 
-    _id: {
-      type: id,
-    },
     username: {
       type: name,
     },
@@ -69,17 +67,17 @@ function addUser(id, name, password) {
   });
   */
 
-  return currentUser;
+  saveUser(currentUser);
 }
 
   // Save the log instance to the database
-  async function saveLog(logInstance) {
+  async function saveUser(currentUser) {
     try {
-      await logInstance.save();
-      console.log('Log saved successfully');
+      await currentUser.save();
+      console.log('User saved successfully');
     } catch (err) {
-      console.error('Error saving log:', err);
+      console.error('Error saving user:', err);
     }
   }
 
-export { add, saveLog };
+export { add, saveUser };
