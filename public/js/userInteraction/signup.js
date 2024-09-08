@@ -1,38 +1,39 @@
 const body = document.body;
-body.addEventListener("load", signupLogic());
+body.addEventListener("load", signup());
 
 
 function signup(){
 
     const signupForm = document.getElementById('userForm');
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    // Prepare data and options
-    const inputData = JSON.stringify({
-        Username: username,
-        Password: password
-    });
-
-    const options = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: inputData
-    };
 
     signupForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        post();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+    
+        // Prepare data and options
+        const inputData = JSON.stringify({
+            Username: username,
+            Password: password
+        });
+    
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: inputData
+        };
+
+        post(options);
 
     });
 
 }
 
 
-async function post(){
+async function post(options){
 
     try {
         // Use fetch to send the POST request
@@ -44,10 +45,10 @@ async function post(){
         }
 
         // Log the response
-        console.log('Success, new user created: \n' + inputData);
+        console.log('FRONTEND: Success, new user sent to server: \n' + inputData);
 
     } catch (error) {
-        console.error('Error: \n', error);
+        console.error('FRONTEND: Error: \n', error);
     }
     
 }
