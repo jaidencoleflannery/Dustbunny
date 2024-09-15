@@ -1,13 +1,16 @@
 import express from 'express';
 import * as user from '../db/models/userModel.mjs';
 const signupRouter = express.Router();
+import * as bodyParser from "body-parser"
 
 signupRouter.get('/', (req, res) => {
-    let name = "Moth";
     res.render('signup');
 })
 
 signupRouter.post('/', (req, res) => {
+
+    console.log(req.body);
+
     const options = req.body.options;
 
     console.log(req.params);

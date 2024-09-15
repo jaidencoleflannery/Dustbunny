@@ -11,6 +11,8 @@ function signup(){
 
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
+
+        console.log(username, password);
     
         // Prepare data and options
         const inputData = JSON.stringify({
@@ -45,10 +47,10 @@ async function post(options){
         }
 
         // Log the response
-        console.log('FRONTEND: Success, new user sent to server: \n' + inputData);
+        console.log('Success, new user sent to server: \n' + inputData + '\With response: \n' + response.statusText);
 
     } catch (error) {
-        console.error('FRONTEND: Error: \n', error);
+        console.error('POST Error: \n', error);
     }
     
 }
