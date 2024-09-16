@@ -67,11 +67,11 @@ function add(name, password) {
   });
   */
 
-  saveUser(currentUser);
+  save(currentUser);
 }
 
   // Save the log instance to the database
-  async function saveUser(currentUser) {
+  async function save(currentUser) {
     try {
       await currentUser.save();
       console.log('User saved successfully');
@@ -80,4 +80,4 @@ function add(name, password) {
     }
   }
 
-export { add, saveUser };
+export { add };

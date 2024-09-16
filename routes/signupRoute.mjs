@@ -18,11 +18,7 @@ signupRouter.post('/', (req, res) => {
 
     res.send(req.body);    // echo the result back
 
-     /*   const username = req.body.username;
-    const password = req.body.password;
-
     user.add(username, password); // < adds user to database
-    */
     
 })
 
