@@ -15,10 +15,10 @@ function signup(){
         console.log(username, password);
     
         // Prepare data and options
-        const inputData = JSON.stringify({
-            Username: username,
-            Password: password
-        });
+        
+        const inputData = JSON.stringify({ Username: username, Password: password});
+
+        console.log(JSON.stringify(inputData));
     
         const options = {
             method: 'POST',
@@ -47,7 +47,8 @@ async function post(options){
         }
 
         // Log the response
-        console.log('Success, new user sent to server: \n' + inputData + '\With response: \n' + response.statusText);
+        console.log(options);
+        console.log('Success, new user sent to server with response: \n' + response.statusText);
 
     } catch (error) {
         console.error('POST Error: \n', error);

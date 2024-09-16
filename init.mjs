@@ -16,14 +16,17 @@ import * as signup from './public/js/userClasses/signupModel.mjs'
 
 // set home route
 import { indexRouter } from './routes/indexRoute.mjs';
+app.use(express.json())
 app.use('/', indexRouter);
 
 // set login route
 import { loginRouter } from './routes/loginRoute.mjs';
+app.use(express.json());
 app.use('/login', loginRouter);
 
 // set login route
 import { signupRouter } from './routes/signupRoute.mjs';
+app.use(express.json());
 app.use('/signup', signupRouter);
 
 app.listen(PORT);

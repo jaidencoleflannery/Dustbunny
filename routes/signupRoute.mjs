@@ -9,12 +9,13 @@ signupRouter.get('/', (req, res) => {
 
 signupRouter.post('/', (req, res) => {
 
-    console.log(req.body);
+    console.log(JSON.stringify(req.body)); // This will contain the sent JSON data
 
-    const options = req.body.options;
+    const username = req.body.Username;
+    const password = req.body.Password;
+    console.log('Username:', username);
+    console.log('Password:', password);
 
-    console.log(req.params);
-    console.log(req.body);      // your JSON
     res.send(req.body);    // echo the result back
 
      /*   const username = req.body.username;
