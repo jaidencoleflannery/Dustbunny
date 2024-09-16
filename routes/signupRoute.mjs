@@ -1,7 +1,7 @@
 import express from 'express';
-import * as user from '../db/models/userModel.mjs';
+import * as userDB from '../db/models/userModel.mjs';
+import signup from '../models/signupModel.mjs';
 const signupRouter = express.Router();
-import * as bodyParser from "body-parser"
 
 signupRouter.get('/', (req, res) => {
     res.render('signup');
@@ -9,16 +9,18 @@ signupRouter.get('/', (req, res) => {
 
 signupRouter.post('/', (req, res) => {
 
-    console.log(JSON.stringify(req.body)); // This will contain the sent JSON data
+    res.send(req.body); // echo the result back (prints to the console)
 
-    const username = req.body.Username;
-    const password = req.body.Password;
+    const username = JSON.stringify(req.body.Username);
+    const password = JSON.stringify(req.body.Password);
     console.log('Username:', username);
     console.log('Password:', password);
 
-    res.send(req.body);    // echo the result back
+    const userObject = new signup(username, password); // This creates an object that the database can ingest via the class stored in /models/userModel.mjs
 
-    user.add(username, password); // < adds user to database
+    console.log(userObject);
+
+    userDB.add(userObject); // adds user to database
     
 })
 

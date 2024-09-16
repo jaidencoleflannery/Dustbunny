@@ -6,7 +6,6 @@ const Schema = mongoose.Schema;
 const userSchema = {
   _id: {
     type: String,
-    required: true,
   },
   username: {
     type: String,
@@ -16,6 +15,7 @@ const userSchema = {
     type: String,
     required: false,
   },
+  /*
   // appends logs to user ^
   logs: { 
     action: {
@@ -30,20 +30,21 @@ const userSchema = {
       type: Date,
     },
   },
+  */
 }
 
 // Create the model
 const user = mongoose.model('user', userSchema);
 
 // Function to add a new log
-function add(name, password) {
+function add(arg) {
   // Create a new log instance
   const currentUser = new user({ 
     username: {
-      type: name,
+      type: arg.name,
     },
     password: {
-      type: password,
+      type: arg.password,
     },
   });
 

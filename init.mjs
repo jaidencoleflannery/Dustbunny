@@ -9,11 +9,6 @@ app.set('view engine', 'ejs');
 // serve static files from the 'public' directory
 app.use(express.static('public'));
 
-// import login functionality
-import * as login from './public/js/userClasses/loginModel.mjs'
-// import signup functionality
-import * as signup from './public/js/userClasses/signupModel.mjs'
-
 // set home route
 import { indexRouter } from './routes/indexRoute.mjs';
 app.use(express.json())
