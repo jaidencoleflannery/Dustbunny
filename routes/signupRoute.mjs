@@ -1,5 +1,5 @@
 import express from 'express';
-import * as userDB from '../db/models/userModel.mjs';
+import add from '../db/models/userModel.mjs';
 import signup from '../models/signupModel.mjs';
 const signupRouter = express.Router();
 
@@ -20,7 +20,7 @@ signupRouter.post('/', (req, res) => {
 
     console.log(userObject);
 
-    userDB.add(userObject); // adds user to database
+    add(userObject); // adds user to database
     
 })
 
