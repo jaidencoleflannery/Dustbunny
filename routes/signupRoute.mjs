@@ -21,6 +21,8 @@ signupRouter.post('/', (req, res) => {
     console.log(userObject);
 
     add(userObject); // adds user to database
+
+    res.render('login');
     
 })
 

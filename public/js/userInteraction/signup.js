@@ -4,21 +4,17 @@ body.addEventListener("load", signup());
 
 function signup(){
 
-    const signupForm = document.getElementById('userForm');
+    const submit = document.getElementById('signupSubmit');
 
-    signupForm.addEventListener("submit", (e) => {
+    submit.addEventListener("click", (e) => {
         e.preventDefault();
 
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
-
-        console.log(username, password);
     
         // Prepare data and options
         
         const inputData = JSON.stringify({ Username: username, Password: password});
-
-        console.log(JSON.stringify(inputData));
     
         const options = {
             method: 'POST',
@@ -29,6 +25,8 @@ function signup(){
         };
 
         post(options);
+
+        window.location.replace(' /login' );
 
     });
 
@@ -43,12 +41,12 @@ async function post(options){
 
         if (!response.ok) {
             // Handle HTTP errors
-            throw new Error('Network response was not ok: \n' + response.statusText);
+            throw new Error('POST Error: Network response was not ok: \n' + response.statusText);
         }
 
         // Log the response
-        console.log(options);
-        console.log('Success, new user sent to server with response: \n' + response.statusText);
+        console.log();
+        console.log('\nPOST Success, new user sent to server with response: ' + response.statusText + '\n\n');
 
     } catch (error) {
         console.error('POST Error: \n', error);

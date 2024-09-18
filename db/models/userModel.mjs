@@ -37,14 +37,14 @@ const userSchema = {
 const user = mongoose.model('user', userSchema);
 
 // Function to add a new log
-function add(arg) {
+function add(userInfo) {
   // Create a new log instance
   const currentUser = new user({ 
     username: {
-      type: arg.name,
+      type: userInfo.name,
     },
     password: {
-      type: arg.password,
+      type: userInfo.password,
     },
   });
 
@@ -81,4 +81,4 @@ function add(arg) {
     }
   }
 
-export { add };
+export default add;
